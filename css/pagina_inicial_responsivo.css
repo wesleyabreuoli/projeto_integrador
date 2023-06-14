@@ -1,0 +1,274 @@
+@media only screen and (max-width: 719px) {
+
+    *{
+        text-align: center;
+        align-items: center;
+    }
+
+    body {
+        background-color: #f5f5f5;
+    }
+
+    .header {
+        position: relative;
+        width: 100%;
+        padding: 10px 6.5%;
+        background: transparent;
+        border-radius: 10px;
+        display: run-in;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .navbar a {
+        margin-right: 20%;
+        font-weight: 500;
+        background-color: #000000;
+        border-radius: 20px;
+        padding: 15px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+       font-family: Arial, Helvetica, sans-serif;
+        color: rgb(255, 255, 255);
+        border: 2px solid #000000;
+    }
+
+    .navbar a:hover {
+        background-color: rgb(3, 28, 255);
+        font-style: oblique;
+        color: rgb(253, 252, 252);
+        border: 2px solid #ffffff;
+    }
+
+    .navbar span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .navbar span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .navbar:hover span {
+        padding-right: 25px;
+    }
+
+    .navbar:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+        margin-left: 60px;
+        margin-right: 50px;
+        width: 250px;
+        height: 30px;
+        background: transparent;
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .search-bar input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        margin-left: 5px;
+        color: rgb(0, 0, 0);
+    }
+
+    .search-bar input::placeholder {
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+    }
+
+    .search-bar button {
+        width: 30px;
+        height: 100%;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        align-items: center;
+    }
+
+    .search-bar button i {
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+    }
+
+    .container {
+        position: relative;
+        text-align: center;
+        align-items: center;
+        margin-left: 15px;
+        width: 100%;
+        height: 550px;
+        background: url('../imagens/adultos_trabalhando.jpg');
+        background-size: cover;
+        background-position: center;
+        /* border-radius: 10px; */
+        margin-top: 20px;
+        border-radius: 6px;
+    }
+
+    input[type=search] {
+        font-size: 12px;
+        color: black;
+        text-align: center;
+        border-radius: 6px;
+    }
+
+    .container .content {
+        border-radius: 6px;
+        position: relative;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.63);
+        /* border-radius: 10px; */
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content .logo {
+        font-size: 30px;
+        font-family: Impact, 'Arial Narrow Bold', sans-serif;
+        font-style: oblique;
+        color: white;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 25px;
+        line-height: 1;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    }
+
+    h3 {
+        font-size: 40px;
+        filter: brightness(150%);
+        font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        font-style: oblique;
+        color: white;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    }
+
+    h4 {
+        font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        filter: brightness(150%);
+        text-align: center;
+        font-style: oblique;
+        font-size: 20px;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    }
+
+    h5{
+        filter: brightness(150%);
+    }
+
+    .text-sci p {
+        font-size: 16px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        margin: 0px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    }
+
+    .social-icons a i {
+        font-size: 22px;
+        color: white;
+        margin-right: 10px;
+        transition: .5s ease;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    }
+
+    .social-icons a:hover i {
+        transform: scale(1.2);
+    }
+
+    .container .logreg_box {
+        border-radius: 6px;
+        margin-top: -80px;
+        position: relative;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: white;
+        flex-direction: column;
+    }
+
+    strong {
+        margin-right: 30px;
+        font-weight: 500;
+        background-color: #000000;
+        border: none;
+        border-radius: 20px;
+        padding: 15px 22px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 13px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-family: Solid, Helvetica, sans-serif;
+        color: rgb(255, 255, 255);
+        border: 2px solid #fffbfb;
+        align-items: center;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    }
+
+    .top {
+        background: url(../imagens/senhor_trabalhando.jpg);
+        filter: brightness(85%);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        align-items: center;
+        margin-top: 90px;
+    }
+
+    strong:hover {
+        background-color: rgb(3, 28, 255);
+        font-style: oblique;
+        color: rgb(255, 254, 254);
+        border: 2px solid #ffffff;
+    }
+
+    footer {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        margin-top: 550px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        text-align: center;
+    }
+
+    .button {
+        width: 250px;
+     }  
+
+}

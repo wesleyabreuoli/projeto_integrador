@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cadastre-se </title>
+
+    <link rel="stylesheet" href="./css/cadastre-se.css">
+    <link rel="stylesheet" href="./css/cadastre-se_responsivo.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a class="button" href="./index.html" target="_blank"> <span> Pagina Inicial </span></a>
+            <a class="button" href="./para_candidatos.html" target="_blank"> <span> Para Candidatos </span></a>
+            <a class="button" href="./para_empresas.html" target="_blank"><span> Para Empresas </span></a>
+            <a class="button" href="./sobre_nos.html" target="_blank"><span> Sobre Nós </span></a>
+        </nav>
+
+        <form action="#" class="search-bar">
+            <input type="search" placeholder="Pesquisar">
+            <button type="submit"><i class='bx bx-search-alt-2'></i></button>
+
+        </form>
+
+    </header>
+
+    <br> <br> <br> <br> <br>
+
+    <div>
+        <form class="cadastro">
+            <h1>Cadastro de Candidato</h1>
+            <label>Nome Completo:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+
+            <label for="cpf">Cadastro de Pessoa Fisica (CPF):</label>
+            <input oninput="mascara(this)" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx">
+
+            <label for="rg">Registro Geral (RG):</label>
+            <input id="rg" name="rg" oninput="formatarRG()" maxlength="12" placeholder="xx.xxx.xxx-x">
+
+            <label> Data de Nascimento: </label>
+            <input type="date" id="date" name="date" required>
+
+            <br> <br>
+
+            <label>E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu E-mail">
+
+            <label>Senha:</label>
+            <input type="password" id="senha">
+
+            <label>Endereço:</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Nome da rua">
+
+            <label>Numero:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10000" required>
+
+            <label>Complemento:</label>
+            <input id="complemento" name="complemento" placeholder="Casa/Apartamento">
+
+            <label>Bairro:</label>
+            <input id="Bairro" name="Bairro" placeholder="Insira seu Bairro">
+
+            <label for="cep">CEP:</label>
+            <input id="cep" name="cep" oninput="formatarCEP()" maxlength="9" placeholder="00.000-00">
+
+            <label>Cidade:</label>
+            <input id="cidade" name="cidade" placeholder="Nome da cidade"> <br> <br>
+
+            <label for="search"> Estado: </label>
+            <input type="search" id="search" name="search" list="items" required>
+            <datalist id="items">
+                <option value="Acre (AC)">
+                <option value="Alagoas (AL)">
+                <option value="Amapá (AP)">
+                <option value="Amazonas (AM)">
+                <option value="Bahia (BA)">
+                <option value="Ceará (CE)">
+                <option value="Distrito Federal (DF)">
+                <option value="Espírito Santo (ES)">
+                <option value="Goiás (GO)">
+                <option value="Maranhão (MA)">
+                <option value="Mato Grosso (MT)">
+                <option value="Mato Grosso do Sul (MS)">
+                <option value="Minas Gerais (MG)">
+                <option value="Pará (PA)">
+                <option value="Paraíba (PB)">
+                <option value="Paraná (PR)">
+                <option value="Pernambuco (PE)">
+                <option value="Piauí (PI)">
+                <option value="Rio de Janeiro (RJ)">
+                <option value="Rio Grande do Norte (RN)">
+                <option value="Rio Grande do Sul (RS)">
+                <option value="Rondônia (RO)">
+                <option value="Roraima (RR)">
+                <option value="Santa Catarina (SC)">
+                <option value="São Paulo (SP)">
+                <option value="Sergipe (SE)">
+                <option value="Tocantins (TO)">
+            </datalist>
+
+            <br> <br>
+
+            <label>Telefone:</label><br>
+
+            <input onkeyup="formatarTelefone()" type="tel" id="telefone" name="telefone" placeholder=" (xx)xxxxx-xxxx"
+                required>
+
+
+            <a class="button2" href="./cadastrar_curriculum.html" target="_blank" style="vertical-align: middle;">
+                <span>Cadastrar</span> </a>
+        </form>
+    </div>
+
+    <script>
+        // Função para formatar o telefone com separadores automáticos
+        function formatarTelefone() {
+            // Obtém o valor atual do campo de telefone
+            var telefone = document.getElementById("telefone").value;
+
+            // Remove todos os caracteres que não são números
+            telefone = telefone.replace(/\D/g, '');
+
+            // Formata o número com os separadores
+            var formatted = '';
+            if (telefone.length > 0) {
+                formatted += '(' + telefone.substring(0, 2) + ') ';
+            }
+            if (telefone.length >= 3) {
+                formatted += telefone.substring(2, 7) + '-';
+            }
+            if (telefone.length >= 8) {
+                formatted += telefone.substring(7, 11);
+            }
+
+            // Insere o valor formatado no campo de telefone
+            document.getElementById("telefone").value = formatted;
+        }
+
+        // Adiciona um listener para o evento "input" do campo de telefone
+        document.getElementById("telefone").addEventListener("input", formatarTelefone);
+
+        function mascara(i) {
+            var v = i.value;
+            if (isNaN(v[v.length - 1])) { // impede entrar outro caractere que não seja número
+                i.value = v.substring(0, v.length - 1);
+                return;
+            }
+            i.setAttribute("maxlength", "14");
+            if (v.length == 3 || v.length == 7) i.value += ".";
+            if (v.length == 11) i.value += "-";
+        }
+
+        function formatarRG() {
+            var rg = document.getElementById("rg").value;
+            rg = rg.replace(/\D/g, '');
+            rg = rg.replace(/(\d{2})(\d{3})(\d{3})(\d{1})$/, '$1.$2.$3-$4');
+            document.getElementById("rg").value = rg;
+        }
+
+        function formatarCEP() {
+            var cep = document.getElementById("cep").value;
+            cep = cep.replace(/\D/g, '');
+            cep = cep.replace(/^(\d{5})(\d)/, '$1-$2');
+            document.getElementById("cep").value = cep;
+        }
+
+    </script>
+
+<footer>
+    Projeto Integrador <br>
+    40+ Empregos - "Seu sucesso profissional é nosso compromisso!" <br>
+    Desenvolvido por: Wesley Abreu de Oliveira.
+</footer>
+
+</body>
+
+</html>
